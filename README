@@ -43,12 +43,26 @@ El servicio que retorna el porcentage no falla.
 Si el primer valor es 42.0 y el segundo valor es 18.0 entonces la URL que deberiamos invocar desde un navegador o desde Postman para probar el API es:
 http://localhost:8080/api/calculator/suma/num1=42.0&num2=18.0
 
+Para este caso debido a que el porcentage regresado por el servicio es 50% entonces el valor regresado por el API REST es: 30.0
+
 [Prueba 2] Esta prueba invoca el endpoint con 2 números y el servicio que regresa el porcentaje que se aplica falla.
 Para hacer fallar el servicio el primer número debe ser 158.0 y al segundo número le asignamos 22.0.
+Entonces el valor de la URL quedaria: http://localhost:8080/api/calculator/suma/num1=158.0&num2=22.0
+Si queremos que la cache se encuentre vacia entonces antes de ejecutar esta prueba reiniciamos el API REST.
+Como el servicio falla y además la cache está vacia entonces se va a producir una excepción y el mensaje regresado por el end-point es:
+
+{
+    "mensaje": "No percentages stored recently"
+}
+
+[Prueba 3] El propósito de esta prueba es usar la cache. Entonces realizamos una invocación exitosa para que en la cache
+tenga el valor del 50%.
+La invocación puede ser: http://localhost:8080/api/calculator/suma/num1=42.0&num2=18.0
+Ahora hacemos fallar el servicio que regresa los porcentages con la URL http://localhost:8080/api/calculator/suma/num1=158.0&num2=22.0
+Sin embargo, aunque el servicio que regresa el porcentaje fallo se pudo recuperar el valor del porcentage de la cache de 50%.
+Entonces el valor regresado por el end-point es 90.
 
 
-es el 10% (este es un porcentage fijo regresado por el servicio).
-          El servicio que retorna el porcentage no falla.
 
 
 
