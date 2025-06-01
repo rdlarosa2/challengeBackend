@@ -1,4 +1,4 @@
-INSTALACION
+# Instalación
 
 1] En una máquina con sistema operacional Windows 11 instale WSL 2.
 Para lograr esto se abre una ventana de "PowerShell" y se ejecuta el comando: wsl --install
