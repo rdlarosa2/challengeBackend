@@ -62,6 +62,12 @@ Ahora hacemos fallar el servicio que regresa los porcentages con la URL http://l
 Sin embargo, aunque el servicio que regresa el porcentaje fallo se pudo recuperar el valor del porcentage de la cache de 50%.
 Entonces el valor regresado por el end-point es 90.
 
+[Prueba 4] El propósito de esta prueba es probar que una vez se almacene un valor en la cache
+(por una invocación exitosa evitando que el servicio de porcentages falle) si se pasan 30 minutos
+entonces este valor ya no es tenido en cuenta y se produce un error regresando el error:
+{
+    "mensaje": "No percentages stored recently"
+}
 
 
 
