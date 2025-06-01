@@ -25,18 +25,11 @@ public class CalculatorServiceImpl implements CalculatorService {
     public double suma(double num1, double num2) throws NoPercentageStoredRecentlyException {
         double percentage = 20.0 ;
         try {
-            System.out.println("CalculatorServiceImpl:suma: Antes de this.percentageService.getPercentage(num1)");
-
             percentage = this.percentageService.getPercentage(num1);
-
-            System.out.println("CalculatorServiceImpl:suma: Antes de this.percentageCacheService.updatePercentageCache(percentage)");
 
             this.percentageCacheService.updatePercentageCache(percentage);
         }
         catch(Exception e) {
-            System.out.println("CalculatorServiceImpl:suma: Exception name: >" + e.getClass().getName() + "<" );
-
-            System.out.println("CalculatorServiceImpl:suma: Exception: " + e.getMessage());
 
             Optional<Percentage> optPercentage = this.percentageCacheService.findById(1L);
 
@@ -50,9 +43,6 @@ public class CalculatorServiceImpl implements CalculatorService {
                     throw new NoPercentageStoredRecentlyException("No percentages stored recently");
                 }
             }
-
-
-            //percentage = this.percentageCacheService.findById(1L);    //.getPercentageCache();
         }
 
         return ( num1 + num2 ) * percentage / 100.0 ;

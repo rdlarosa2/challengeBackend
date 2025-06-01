@@ -1,0 +1,39 @@
+INSTALACION
+
+1] En una máquina con sistema operacional Windows 11 instale WSL 2.
+Para lograr esto se abre una ventana de "PowerShell" y se ejecuta el comando: wsl --install
+
+2] Se abre una ventana de comandos de WSL2 y se instala docker (sobre WSL2).
+
+3] Usamos la misma ventana de WSL2 e instalamos git con el comando: sudo apt update && sudo apt install git
+
+4] Vamos a crear y a ejecutar una imagen de docker donde va a ejecutar el API REST sobre el ambiente WSL2.
+
+4.1] Para esto clonamos el repositorio https://github.com/rdlarosa2/docker_jdk21.git con el comando:
+git clone https://github.com/rdlarosa2/docker_jdk21.git
+
+4.2] Entramos al directorio que se acabó de crear con el comando: cd docker_jdk21
+
+4.3] Creamos una imagen en docker con el comando: ./docker_build.sh
+Esta imagen va a quedar con el tag jdk21-image:1.0.0
+
+4.4] Ejecutamos la imagen que acabamos de crear e ingresamos al interior de ella con el comando: ./docker_run.sh
+
+5] Ya en la ventana de comandos de la imagen de docker con tag jdk21-image:1.0.0 nos cambiamos el directorio /home
+con el comando: cd /home
+
+6] Instalamos git con el comando: apt update && apt install git
+
+7]  Instalamos maven con el comando: apt update && apt install maven
+
+8] Obtenemos los fuentes del proyecto donde esta nuestro API REST con el comando:
+git clone https://github.com/rdlarosa2/challengeBackend.git
+
+9] Nos cambiamos al directorio donde están los fuentes con el comando: cd challengeBackend
+
+10] Compilamos los fuentes y generamos el jar con el comando: mvn install
+
+11] Ejecutamos el API REST con el comando: mvn spring-boot:run
+
+
+
