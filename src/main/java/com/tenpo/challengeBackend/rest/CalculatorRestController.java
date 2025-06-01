@@ -19,20 +19,11 @@ public class CalculatorRestController {
     }
 
 
-    @GetMapping("/suma/{num1}/{num2}")
+    @GetMapping("/suma/num1={num1}&num2={num2}")
     public double suma( @PathVariable(name="num1") double num1,@PathVariable(name="num2")  double num2 ) {
-        System.out.println("CalculatorRestController:suma: inicio");
+
         return this.calculatorService.suma(num1,num2) ;
     }
-
-    @GetMapping("/multi")
-    public double multi() {
-        double val = 7.3 ;
-        System.out.println("CalculatorRestController:multi: inicio");
-        return val ;
-    }
-
-//
 
     @ExceptionHandler
     public ResponseEntity<UserErrorResponse> handleException(NoPercentageStoredRecentlyException exc) {

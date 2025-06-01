@@ -30,11 +30,9 @@ public class PercentageCacheServiceImpl implements PercentageCacheService {
 
         if (optPercentage.isPresent()) {
             try {
-                System.out.println("PercentageCacheServiceImpl:updatePercentageCache: Antes de invocar this.percentageCacheRepository.update(percentageParam)" );
 
                 this.percentageCacheRepository.update(percentageParam);
 
-                System.out.println("PercentageCacheServiceImpl:updatePercentageCache: Despues de invocar this.percentageCacheRepository.update(percentageParam)" );
             }
             catch (InvalidDataAccessApiUsageException ite) {
                 System.out.println("PercentageCacheServiceImpl:updatePercentageCache: exception name >" + ite.getClass().getName() + "<");
