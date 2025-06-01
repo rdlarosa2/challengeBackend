@@ -1,4 +1,4 @@
-# Instalación
+## Instalación
 
 1] En una máquina con sistema operacional Windows 11 instale WSL 2.
 Para lograr esto se abre una ventana de "PowerShell" y se ejecuta el comando: wsl --install
@@ -15,6 +15,7 @@ git clone https://github.com/rdlarosa2/docker_jdk21.git
 4.2] Entramos al directorio que se acabó de crear con el comando: cd docker_jdk21
 
 4.3] Creamos una imagen en docker con el comando: ./docker_build.sh
+(Dentro de este archivo el comando que realmente se ejecuta es: docker build -t jdk21-image:1.0.0 . )
 Esta imagen va a quedar con el tag jdk21-image:1.0.0
 
 4.4] Ejecutamos la imagen que acabamos de crear e ingresamos al interior de ella con el comando: ./docker_run.sh
@@ -35,5 +36,8 @@ git clone https://github.com/rdlarosa2/challengeBackend.git
 
 11] Ejecutamos el API REST con el comando: mvn spring-boot:run
 
+## Plan de Pruebas
+
+P1] Esta prueba trata de invocar el endpoint con 2 números y el porcentaje que se aplica es el 50% (este es un valor fijo regresado por el servicio).
 
 
