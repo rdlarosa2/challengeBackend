@@ -43,6 +43,9 @@ public class CalculatorServiceImpl implements CalculatorService {
                     throw new NoPercentageStoredRecentlyException("No percentages stored recently");
                 }
             }
+            else {
+                throw new NoPercentageStoredRecentlyException("No percentages stored recently");
+            }
         }
 
         return ( num1 + num2 ) * percentage / 100.0 ;
