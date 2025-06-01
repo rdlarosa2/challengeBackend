@@ -35,7 +35,7 @@ public class CalculatorServiceImpl implements CalculatorService {
 
             if ( optPercentage.isPresent() ) {
                 Percentage percentageObj = optPercentage.get() ;
-                // percentageObj.getDate()
+
                 if ( dateAfterLast30minutes( percentageObj.getDate() )) {
                     percentage = percentageObj.getValue();
                 }

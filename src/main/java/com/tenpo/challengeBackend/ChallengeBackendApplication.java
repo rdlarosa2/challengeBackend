@@ -16,16 +16,4 @@ public class ChallengeBackendApplication {
 		SpringApplication.run(ChallengeBackendApplication.class, args);
 	}
 
-
-	@Bean
-	public CommandLineRunner commandLineRunner(PercentageCacheRepository percentageCacheRepository) {
-		return runner-> {
-			System.out.println("commandLineRunner: start");
-			Date date = new Date();
-			Percentage percentage = new Percentage(0L, 10.0, date);
-
-			percentageCacheRepository.save(percentage);
-		};
-	}
-
 }

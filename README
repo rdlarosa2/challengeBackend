@@ -38,6 +38,20 @@ git clone https://github.com/rdlarosa2/challengeBackend.git
 
 ## Plan de Pruebas
 
-P1] Esta prueba trata de invocar el endpoint con 2 números y el porcentaje que se aplica es el 50% (este es un valor fijo regresado por el servicio).
+[Prueba 1] Esta prueba invoca el endpoint con 2 números y el porcentaje que se aplica es el 50% (este es un porcentage fijo regresado por el servicio).
+El servicio que retorna el porcentage no falla.
+Si el primer valor es 42.0 y el segundo valor es 18.0 entonces la URL que deberiamos invocar desde un navegador o desde Postman para probar el API es:
+http://localhost:8080/api/calculator/suma/num1=42.0&num2=18.0
+
+[Prueba 2] Esta prueba invoca el endpoint con 2 números y el servicio que regresa el porcentaje que se aplica falla.
+Para hacer fallar el servicio el primer número debe ser 158.0
+
+
+es el 10% (este es un porcentage fijo regresado por el servicio).
+          El servicio que retorna el porcentage no falla.
+
+
+
+
 
 
